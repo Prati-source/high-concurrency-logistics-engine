@@ -58,7 +58,7 @@ async fn main() {
     tracing::info!("Worker ID: {}", WORKER_ID.get().unwrap());
     // create the connection pool
     let pool: PgPool = PgPoolOptions::new()
-        .max_connections(1000)
+        .max_connections(100)
         .connect(&database_url)
         .await
         .expect("failed to connect to database");
